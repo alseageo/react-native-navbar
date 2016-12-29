@@ -33,6 +33,10 @@ const StatusBarShape = {
 };
 
 function customizeStatusBar(data) {
+  if (!data.customizable) {
+    return;
+  }
+
   if (Platform.OS === 'ios') {
     const animated = (data.animated || NavigationBar.defaultProps.statusBar.animated)
     if (data.style) {
@@ -138,6 +142,7 @@ class NavigationBar extends Component {
 
   static defaultProps = {
     statusBar: {
+      customizable: true,
       style: 'default',
       hidden: false,
       animated: false,

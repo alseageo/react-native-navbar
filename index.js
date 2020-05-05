@@ -108,7 +108,7 @@ export default class NavigationBar extends Component {
     this.customizeStatusBar();
   }
 
-  componentWillReceiveProps() {
+  UNSAFE_componentWillReceiveProps() {
     this.customizeStatusBar();
   }
 
